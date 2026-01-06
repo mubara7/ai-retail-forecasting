@@ -1,0 +1,5 @@
+Maryam
+Skills: Python, FastAPI, REST APIs, SQL, Git, Linux
+Projects: API development, automation scripts
+Experience: Built backend services and integrated APIs
+

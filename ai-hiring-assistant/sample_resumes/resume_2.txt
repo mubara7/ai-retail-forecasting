@@ -1,0 +1,4 @@
+Ali
+Skills: React, HTML, CSS, Tailwind, JavaScript
+Projects: E-commerce frontend, landing pages
+Experience: Frontend development, UI components

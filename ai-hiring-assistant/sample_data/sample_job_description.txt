@@ -1,0 +1,8 @@
+We are hiring a Junior AI/ML Engineer.
+Requirements:
+- Python, NumPy, basic data processing
+- ML fundamentals (classification, regression)
+- Experience with APIs (FastAPI/Flask) is a plus
+- Familiar with Git and Linux
+Nice to have:
+- Streamlit, basic NLP, resume parsing

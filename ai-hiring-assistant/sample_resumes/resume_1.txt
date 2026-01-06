@@ -1,0 +1,4 @@
+Mubara Khaqan
+Skills: Python, NumPy, Pandas, Machine Learning, Streamlit, Git, Linux
+Projects: AI Resume Matcher, Hiring Assistant, Demand Forecasting
+Experience: Built small ML apps and APIs, worked with datasets and model evaluation
