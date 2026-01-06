@@ -1,6 +1,6 @@
 import streamlit as st
-from services.parsing import parse_resume
-from core.scoring import rank_resumes
+from app.services.parsing import parse_resume
+from app.core.scoring import score_resume
 
 
 st.set_page_config(page_title="AI Hiring Assistant", page_icon="🧠", layout="wide")

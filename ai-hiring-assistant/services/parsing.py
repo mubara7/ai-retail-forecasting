@@ -1,5 +1,7 @@
 from io import BytesIO
 from typing import Optional
+from app.core.utils import clean_text
+
 
 def parse_txt(file_bytes: bytes) -> str:
     try:

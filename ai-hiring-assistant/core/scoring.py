@@ -1,5 +1,7 @@
 from typing import Dict, List, Tuple
 from .utils import tokenize, to_set
+from app.core.utils import clean_text
+
 
 def jaccard_similarity(a: set, b: set) -> float:
     if not a or not b:
