@@ -9,7 +9,7 @@ if ROOT_DIR not in sys.path:
 import streamlit as st
 
 from app.services.parsing import parse_resume
-from app.core.scoring import score_resume
+from app.core.scoring import rank_resumes
 
 st.set_page_config(page_title="AI Hiring Assistant", page_icon="🧠", layout="wide")
 
