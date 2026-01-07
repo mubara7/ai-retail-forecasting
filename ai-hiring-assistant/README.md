@@ -1,3 +1,9 @@
+## 🔗 Live Demo
+
+Try the live deployed version of the app here:
+
+👉 **https://projects-saoyz9dknac3eo9khxi7bz.streamlit.app/**
+
 # 🧠 AI Hiring Assistant (Resume Shortlisting App)
 
 An AI-powered web application that helps recruiters and HR teams automatically
