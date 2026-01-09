@@ -116,8 +116,6 @@ Replace keyword logic with embeddings / LLM scoring
 
 End-to-end hiring automation using Make.com or n8n
 
-Cloud deployment (public link for recruiters)
-
 Recruiter dashboard + analytics
 
 Add semantic skill extraction & match heatmaps
