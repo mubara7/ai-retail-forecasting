@@ -1,45 +1,101 @@
-📊 AI Retail Sales Forecasting App
-🔗 Live Demo:
+📊 AI Retail Sales Forecasting Suite
+
+🔗 Live App:
 https://ai-retail-forecasting-f6aryhg3cdg5uz6a4lkkgs.streamlit.app/
 
+A production-ready Retail Forecasting Dashboard that transforms Walmart’s weekly sales data into trend-aware, anomaly-aware, actionable predictions.
 
-A production-style Retail Forecasting Dashboard that transforms Walmart’s weekly sales data into actionable predictions using multiple forecasting models.
-This app demonstrates a fully functional end-to-end ML pipeline used in real data-science teams:
-data ingestion → cleaning → time-series preparation → forecasting → evaluation → export.
-🚀 Features
+This project reflects a real enterprise ML workflow:
+
+Data Upload → Time-Series Prep → Forecasting → Anomaly Detection → Model Evaluation → Export
+
+Designed exactly like the tools used by retail analytics & ML engineering teams.
+
+🚀 Key Features
 🔹 1. Data Ingestion
 
 Upload Walmart train.csv
 
-Automatic validation & preview
+Automated validation
 
-Store and Department filters
+Store & Department filtering
 
-Aggregation (sum)
+Weekly aggregation (group + sum)
+
+Cleaned dataset preview
 
 🔹 2. Time-Series Preparation
 
-Converts raw data into weekly time series
+Converts raw transactional rows into weekly time-series
 
-Handles multiple departments
+Handles multi-department and multi-store data
 
-Generates clean dataset for forecasting
+Generates Prophet-compatible format (ds, y)
+
+Ensures no missing weekly timestamps
 
 🔹 3. Forecast Engine
-Models included:
+
+Supports three forecasting models:
 
 Model	Description
-Naive	Last value repeats forward
-Seasonal Naive	Last season’s pattern repeats
-Prophet	Advanced trend + seasonal forecasting
+Naive	Last week’s value repeats forward
+Seasonal Naive	Previous year’s seasonal pattern repeats
+Prophet	Trend + weekly + yearly seasonality, holiday effects
 
-Forecast 4–24 weeks
+Features:
 
-Prophet automatically handles trend + seasonality
+Forecast horizon: 4–24 weeks
 
-🔹 4. Performance Evaluation
+Fully interactive
 
-Sliding-window backtesting
+Clean forecast table
+
+Forecast vs Actual plot
+
+🔹 4. Anomaly Detection (Advanced Analytics Module) — ⭐ NEW ⭐
+
+Detect unusual spikes or drops in weekly sales using two advanced methods.
+
+1) Z-Score Based Detection (Statistical Outliers)
+
+Detects points that deviate from the mean
+
+Ideal for simple spike/drop detection
+
+Threshold: 1–4
+
+1–2: Sensitive
+
+3–4: Strict
+
+Very fast and lightweight
+
+2) Prophet Residual Detection (AI-Based)
+
+Uses Prophet model to compute:
+Actual – Predicted = Residual
+
+Flags weeks that violate trend + seasonality
+
+Threshold: 4–10
+
+4–6: Medium anomalies
+
+7–10: Only extreme unusual behavior
+
+Outputs:
+
+✔ Highlighted anomaly points on the graph (red markers)
+✔ Full anomaly table
+✔ Works with any store/department
+✔ Professional visual analytics
+
+This module adds real business value, helping detect stockouts, holiday effects, promotions, or data inconsistencies.
+
+🔹 5. Model Evaluation
+
+Sliding window backtesting
 
 Metrics:
 
@@ -49,10 +105,11 @@ MAPE – Mean Absolute Percentage Error
 
 Visual comparison: Actual vs Predicted
 
-🔹 5. Export
-ownload forecast results as CSV
+🔹 6. Export
 
-Ready for Excel / BI dashboards / client delivery
+Download forecast output as CSV
+
+Ready for Excel, BI dashboards, or reporting
 
 🛠 Tech Stack
 
@@ -62,11 +119,12 @@ Streamlit
 
 Prophet
 
-Pandas / Numpy
+NumPy / Pandas
 
 Matplotlib
 
-Clean modular pipeline architecture
+Modular ML pipeline (clean architecture)
+
 📂 Project Structure
 sales-forecasting/
 │
@@ -75,6 +133,7 @@ sales-forecasting/
 │   ├── pages/
 │   │   ├── data_upload.py
 │   │   ├── forecasting.py
+│   │   ├── anomaly.py
 │   │   ├── evaluation.py
 │   │   └── export.py
 │
@@ -83,30 +142,29 @@ sales-forecasting/
 │   ├── preprocess.py
 │   ├── models.py
 │   ├── metrics.py
-│   └── plots.py
+│   ├── plots.py
+│   └── anomaly.py
 │
 ├── screenshots/
-│   ├── home.png
-│   ├── upload.png
-│   ├── forecasting.png
-│   ├── evaluation.png
-│   └── export.png
-│
-├── data/
-│   └── train.csv
-│
 ├── requirements.txt
 └── README.md
+
 📸 Screenshots
+
+(Add your own inside /screenshots folder)
+
 🏠 Home
 
 📤 Data Upload
 
-🔮 Forecasting (Prophet Example)
+🔮 Forecasting (Prophet)
+
+⚠️ Anomaly Detection
 
 📉 Model Evaluation
 
 📦 Export
+
 ▶️ Run Locally
 git clone <repository-url>
 cd sales-forecasting
@@ -117,16 +175,19 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 streamlit run app/main.py
+
 📄 Dataset Source
 
-This project uses the Walmart Recruiting – Store Sales Forecasting dataset from Kaggle.
-You can download the dataset from the official competition page:
-
+Walmart Recruiting – Store Sales Forecasting
 👉 https://www.kaggle.com/competitions/walmart-recruiting-store-sales-forecasting
 
-⚠️ Note: Due to licensing restrictions, the raw dataset (train.csv) is not included in this repository.
-Please download it manually from Kaggle and place it in the data/ folder when running the app locally.
+⚠️ Dataset NOT included due to licensing.
+Download train.csv manually and place inside:
+
+data/train.csv
+
 👩‍💻 Author
 
 Mubara Khaqan
-AI/ML Engineer | Retail Forecasting | Applied Machine Learning
+AI/ML Engineer | Applied Machine Learning | Retail Forecasting
+
